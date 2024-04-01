@@ -4,6 +4,7 @@ import Chat from "@/components/chat"
 import Upload from "@/components/upload"
 import Popup from '../components/popup';
 import { useState } from 'react';
+import { string } from "prop-types";
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(true);
@@ -11,8 +12,8 @@ export default function Home() {
 
   const handlePopupSubmit = async (inputKey:string) => {
 
+    var data={"status":"true"}
     const messageObj = { key: inputKey };
-    var data=""
     try {
       const response = await fetch('/api/valid', {
           method: 'POST',
@@ -30,7 +31,7 @@ export default function Home() {
 
     if (data.status==="true") {
       setShowPopup(false);
-      setIsLoggedIn(true);
+      setIsLoggedIn(true);  
     } else {
       alert('Invalid input key. Please try again.');
     }

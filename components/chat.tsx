@@ -2,16 +2,20 @@
 
 import { useState } from 'react';
 
+interface Message {
+  text: any;
+  sender: string;
+}
+
 export default function Chat()
 {
-    const [messages, setMessages] = useState([]);
+    const [messages, setMessages] = useState<Message[]>([]);
 
     const handleInputChange =async (event: any) => {
         const message=event.target.value
         setMessages(prevMessages => [...prevMessages, { text: message, sender: 'user' }]);
         console.log(message)
         const messageObj = { text: message };
-        var botResponse=""
         try {
             const response = await fetch('/api/chat', {
                 method: 'POST',
@@ -20,9 +24,10 @@ export default function Chat()
                   },
                   body: JSON.stringify(messageObj)
                 });
-              botResponse=await response.json();
-              console.log(botResponse);
-              botResponse=botResponse.answer;
+              const jsondata=await response.json();
+              console.log(jsondata);
+              const data=jsondata as {answer:string};
+              const botResponse=data.answer;
               setTimeout(() => {
                 setMessages(prevMessages => [...prevMessages,{ text: botResponse, sender: 'chatbot' }]);
               }, 1000);

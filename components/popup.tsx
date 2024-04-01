@@ -1,10 +1,16 @@
 // components/Popup.js
 import { useState } from 'react';
 
-const Popup = ({ onSubmit }) => {
-  const [inputKey, setInputKey] = useState('');
+import React, { FormEvent } from 'react';
 
+interface Props {
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+}
+
+const Popup:React.FC<Props> = ({onSubmit}) => {
+  const [inputKey, setInputKey] = useState('');
   const handleSubmit = () => {
+    
     if (inputKey.trim() !== '') {
       onSubmit(inputKey);
     } else {
