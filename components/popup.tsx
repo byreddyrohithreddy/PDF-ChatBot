@@ -4,7 +4,7 @@ import { useState } from 'react';
 import React, { FormEvent } from 'react';
 
 interface Props {
-  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+    onSubmit: (inputKey: string) => Promise<void>;
 }
 
 const Popup:React.FC<Props> = ({onSubmit}) => {

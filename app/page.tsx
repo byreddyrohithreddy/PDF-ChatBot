@@ -4,13 +4,14 @@ import Chat from "@/components/chat"
 import Upload from "@/components/upload"
 import Popup from '../components/popup';
 import { useState } from 'react';
-import { string } from "prop-types";
+
+
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handlePopupSubmit = async (inputKey:string) => {
+  const handlePopupSubmit = async (inputKey: string) => {
 
     var data={"status":"true"}
     const messageObj = { key: inputKey };
