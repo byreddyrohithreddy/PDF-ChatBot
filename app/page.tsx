@@ -39,7 +39,7 @@ export default function Home() {
   };
   return (
     <div>
-      {showPopup && <Popup onSubmit={handlePopupSubmit} />}
+      {showPopup && <Popup onSubmit={(e) => handlePopupSubmit(e)} />}
       {isLoggedIn && 
       <main className="flex w-screen h-screen">
         <div className="w-1/4 h-100 bg-gray-600 border-4 border-gray-300 rounded-2xl max-h-screen overflow-y-auto">
