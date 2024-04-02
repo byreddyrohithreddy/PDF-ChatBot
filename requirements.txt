@@ -4,3 +4,4 @@ langchain-core==0.1.37
 langchain==0.1.14
 langchain_google_genai==1.0.1
 pydantic==2.6.4
+python-multipart==0.0.9
