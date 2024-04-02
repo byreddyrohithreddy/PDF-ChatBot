@@ -13,7 +13,7 @@ export default function Home() {
 
   const handlePopupSubmit = async (inputKey: string) => {
 
-    var data={"status":"true"}
+    var data={"status":"false"}
     const messageObj = { key: inputKey };
     try {
       const response = await fetch('/api/valid', {
