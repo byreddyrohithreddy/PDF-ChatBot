@@ -3,17 +3,17 @@ a RAG based web application
 
 Usage:
 First Download the repo onto your system or clone by executing below code
-''' 
+```
 git clone https://github.com/byreddyrohithreddy/RAG-system 
-'''
+```
 Next go to the root directory 
-'''
+```
 cd RAG-system 
-'''
+```
 Execute 
-''' 
+``` 
 npm run dev 
-'''
+```
 > Hope you have installed node package before in hand
 
 You will see a page as below
