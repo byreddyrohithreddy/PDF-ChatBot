@@ -1,6 +1,6 @@
 fastapi==0.100.1
 uvicorn[standard]==0.23.2
-langchain_core
-langchain
-langchain_google_genai
-pydantic
+langchain-core==0.1.37
+langchain==0.1.14
+langchain_google_genai==1.0.1
+pydantic==2.6.4
