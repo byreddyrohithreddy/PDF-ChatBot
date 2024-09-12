@@ -1,4 +1,4 @@
-# RAG-system
+# PDF-ChatBot
 a RAG based web application
 
 Usage:
